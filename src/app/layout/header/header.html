@@ -1,0 +1,56 @@
+
+<header class="w-full flex items-center justify-between px-8 py-4 bg-white border-b border-gray-200">
+  
+  <div class="flex items-center gap-4">
+    <h1 class="text-2xl font-bold italic text-slate-800 tracking-tight">PK Conector</h1>
+    
+    <div class="h-8 w-px bg-gray-200 mx-2"></div>
+    
+    <div>
+      <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Ambiente de trabajo</p>
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-md border border-blue-100">
+          {{ ambiente }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 border border-green-100 rounded-full">
+      <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+      <span class="text-[11px] font-bold text-green-700 uppercase">SAP: CONECTADO</span>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-6">
+    <div class="flex items-center gap-4 text-gray-400">
+      <button class="hover:text-blue-600 transition-colors">
+        <lucide-icon name="search" class="w-5 h-5"></lucide-icon>
+      </button>
+      <button class="hover:text-blue-600 transition-colors">
+        <lucide-icon name="bell" class="w-5 h-5"></lucide-icon>
+      </button>
+      <button class="hover:text-blue-600 transition-colors">
+        <lucide-icon name="settings" class="w-5 h-5"></lucide-icon>
+      </button>
+    </div>
+    
+    <div class="flex items-center gap-3 pl-4 border-l border-gray-100">
+      <!-- <div class="text-right">
+        <p class="text-sm font-medium text-slate-700">Trabajo</p> -->
+        <div class="flex items-center gap-2">
+                <div style="text-align: right; line-height: 1.2;">
+                    <div style="font-size: 0.85rem; font-weight: 700;" id="header-user-name">Usuario Demo</div>
+                    <div style="font-size: 0.7rem; color: var(--text-light);" id="header-user-org">Organización</div>
+                </div>
+                <div style="width: 32px; height: 32px; background: #cbd5e1; border-radius: 50%;"></div>
+
+            </div>
+      <!-- </div> -->
+      <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-gray-200">
+        <img src="https://ui-avatars.com/api/?name=Trabajo&background=random" alt="User">
+      </div>
+    </div>
+  </div>
+</header>
