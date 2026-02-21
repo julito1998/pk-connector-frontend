@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 
 // Importamos Lucide y los iconos que usas en tu HTML
-import { LucideAngularModule, Shield, LayoutDashboard, BellRing, Box, Users, GitMerge, Plus, ZapOff, Check, TriangleAlert } from 'lucide-angular';
+import { LucideAngularModule, Layers, Shield, LayoutDashboard, BellRing, Box, Users, GitMerge, Plus, ZapOff, Check, TriangleAlert } from 'lucide-angular';
 
 export const appConfig: ApplicationConfig = {
   
@@ -11,6 +11,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     importProvidersFrom(
       LucideAngularModule.pick({ 
+        Layers,
         Shield, 
         LayoutDashboard, 
         BellRing, 
