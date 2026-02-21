@@ -1,0 +1,84 @@
+<!-- <aside class="w-72 flex-shrink-0 bg-[#0f172a] text-slate-300 flex flex-col h-full shadow-2xl">
+    <div class="p-8">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                <lucide-icon name="shield" class="text-white w-6 h-6"></lucide-icon>
+            </div>
+            <div>
+                <h1 class="text-xl font-extrabold text-white">PK SaaS</h1>
+            </div>
+        </div>
+    </div>
+
+    <nav class="flex-1 px-4 space-y-2">
+    <a routerLink="/dashboard" 
+       routerLinkActive="active-link" 
+       class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-semibold text-sm hover:bg-slate-800 hover:text-white group">
+        <lucide-icon name="layout-dashboard" class="w-4 h-4"></lucide-icon> 
+        Dashboard
+    </a>
+    
+    <a routerLink="/alarms" 
+       routerLinkActive="active-link" 
+       class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-semibold text-sm hover:bg-slate-800 hover:text-white group">
+        <lucide-icon name="bell-ring" class="w-4 h-4"></lucide-icon> 
+        Alarmas
+    </a>
+</nav>
+
+    <nav class="flex-1 px-4 space-y-2">
+        <a routerLink="/dashboard" routerLinkActive="bg-slate-800 text-blue-500 border-l-4 border-blue-500" class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-semibold text-sm">
+            <lucide-icon name="layout-dashboard" class="w-4 h-4"></lucide-icon> Dashboard
+        </a>
+        <a routerLink="/alarms" routerLinkActive="bg-slate-800 text-blue-500 border-l-4 border-blue-500" class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-semibold text-sm">
+            <lucide-icon name="bell-ring" class="w-4 h-4"></lucide-icon> Alarmas
+        </a>
+        <a routerLink="/users" routerLinkActive="bg-slate-800 text-blue-500 border-l-4 border-blue-500" class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-semibold text-sm">
+            <lucide-icon name="users" class="w-4 h-4"></lucide-icon> Usuarios
+        </a>
+    </nav>
+</aside> -->
+<aside class="w-72 bg-[#0f172a] text-slate-400 flex flex-col h-full shadow-2xl border-r border-slate-800/50">
+    <div class="p-8">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                <lucide-icon name="shield" class="text-white w-6 h-6"></lucide-icon>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold text-white tracking-tight">PK SaaS</h1>
+                <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Control Center</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="flex-1 px-4 space-y-1">
+        <p class="px-4 text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-2">Monitor Global</p>
+        
+        <a routerLink="/dashboard" 
+           routerLinkActive="active-link" 
+           class="nav-item">
+            <lucide-icon name="layout-dashboard" class="w-5 h-5"></lucide-icon> 
+            <span>Dashboard SaaS</span>
+        </a>
+
+        <a routerLink="/alarms" 
+           routerLinkActive="active-link" 
+           class="nav-item justify-between">
+            <div class="flex items-center gap-3">
+                <lucide-icon name="bell-ring" class="w-5 h-5"></lucide-icon> 
+                <span>Tablero de Alarmas</span>
+            </div>
+            <span class="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg shadow-red-500/40">2</span>
+        </a>
+
+        <p class="px-4 text-[11px] font-bold text-slate-500 uppercase tracking-widest mt-6 mb-2">Infraestructura</p>
+        
+        <a routerLink="/containers" class="nav-item">
+            <lucide-icon name="box" class="w-5 h-5"></lucide-icon> <span>Gestión Contenedores</span>
+        </a>
+
+        <a routerLink="/users" class="nav-item">
+            <lucide-icon name="users" class="w-5 h-5"></lucide-icon> <span>ABM Usuarios</span>
+        </a>
+    </nav>
+</aside>

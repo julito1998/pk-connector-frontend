@@ -1,0 +1,56 @@
+/* Usamos @import, como espera el plugin de PostCSS para Tailwind v4 */
+@import "tailwindcss";
+/* @source "./index.html";
+@source "./app"; */
+/* Definimos el tema global una sola vez */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-family: var(--font-sans);
+  margin: 0; /* Aseguramos que no haya márgenes por defecto */
+}
+
+/* Scrollbar personalizado global */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+/* Animaciones globales */
+.alarm-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.alarm-card:hover { transform: scale(1.01); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+
+@keyframes pulse-red {
+  0%, 100% { background-color: rgba(239, 68, 68, 0.1); }
+  50% { background-color: rgba(239, 68, 68, 0.3); }
+}
+.critical-pulse { animation: pulse-red 2s infinite; }
+
+/* Estilo para la opción seleccionada en el menú */
+.active-link {
+  background-color: var(--color-slate-800); /* Fondo oscuro */
+  color: #3b82f6 !important;               /* Azul brillante (text-blue-500) */
+  border-left: 4px solid #3b82f6;          /* Borde azul a la izquierda */
+}
+
+/* Opcional: para que el icono también cambie de color cuando está activo */
+.active-link lucide-icon {
+  color: #3b82f6;
+}
+
+/* Estilo base para cada item del menú */
+.nav-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer font-medium text-sm hover:bg-slate-800/50 hover:text-white;
+}
+
+/* Clase que Angular aplica automáticamente al link activo */
+.active-link {
+  @apply bg-blue-600/10 text-blue-400 border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.1)];
+}
+
+.active-link lucide-icon {
+  @apply text-blue-400;
+}
+
