@@ -1,0 +1,50 @@
+<div class="min-h-screen bg-gray-50 p-8">
+  <!-- Header -->
+  <div class="mb-8">
+    <div class="flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Control de Usuarios & Permisos</h1>
+        <p class="text-gray-600">Gestiona los usuarios y sus permisos de acceso al sistema</p>
+      </div>
+      <button 
+        (click)="showCreateForm.set(true)"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg hover:shadow-xl">
+        NUEVO USUARIO
+      </button>
+    </div>
+  </div>
+
+  <!-- Users Grid -->
+  <div class="space-y-4">
+    @for (user of users(); track user.id) {
+      <app-user-card 
+        [user]="user" 
+        (edit)="editUser($event)"
+        (delete)="deleteUser($event)">
+      </app-user-card>
+    }
+  </div>
+
+  <!-- Empty State -->
+  @if (users().length === 0) {
+    <div class="text-center py-12">
+      <div class="text-gray-400 text-6xl mb-4">👥</div>
+      <h3 class="text-xl font-semibold text-gray-600 mb-2">No hay usuarios registrados</h3>
+      <p class="text-gray-500 mb-6">Comienza agregando el primer usuario al sistema</p>
+      <button 
+        (click)="showCreateForm.set(true)"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Crear Primer Usuario
+      </button>
+    </div>
+  }
+
+  <!-- User Form Modal -->
+  @if (showCreateForm() || editingUser()) {
+    <app-user-form 
+      [user]="editingUser()"
+      (save)="saveUser($event)"
+      (cancel)="cancelForm()">
+    </app-user-form>
+  }
+</div>

@@ -1,0 +1,126 @@
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+    <!-- Header -->
+    <div class="border-b border-gray-200 px-6 py-4">
+      <h2 class="text-xl font-semibold text-gray-900">
+        {{ user() ? 'Editar Usuario' : 'Nuevo Usuario' }}
+      </h2>
+      <p class="text-sm text-gray-600 mt-1">
+        {{ user() ? 'Modifica los datos del usuario' : 'Completa los datos para crear un nuevo usuario' }}
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="p-6 space-y-6">
+      <!-- Nombre y Email -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+            Nombre Completo *
+          </label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            placeholder="Juan Pérez"
+            required>
+          @if (userForm.get('name')?.invalid && userForm.get('name')?.touched) {
+            <p class="mt-1 text-sm text-red-600">El nombre es requerido</p>
+          }
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            Email *
+          </label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            placeholder="juan.perez@empresa.com"
+            required>
+          @if (userForm.get('email')?.invalid && userForm.get('email')?.touched) {
+            <p class="mt-1 text-sm text-red-600">El email es requerido y debe ser válido</p>
+          }
+        </div>
+      </div>
+
+      <!-- Empresa y Rol -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+            Empresa *
+          </label>
+          <input
+            id="company"
+            type="text"
+            formControlName="company"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            placeholder="Empresa A"
+            required>
+          @if (userForm.get('company')?.invalid && userForm.get('company')?.touched) {
+            <p class="mt-1 text-sm text-red-600">La empresa es requerida</p>
+          }
+        </div>
+
+        <div>
+          <label for="role" class="block text-sm font-medium text-gray-700 mb-2">
+            Rol *
+          </label>
+          <select
+            id="role"
+            formControlName="role"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+            <option value="USER">USER</option>
+            <option value="VIEWER">VIEWER</option>
+            <option value="CLIENT ADMIN">CLIENT ADMIN</option>
+            <option value="SUPER ADMIN">SUPER ADMIN</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Estado -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          Estado
+        </label>
+        <div class="flex items-center space-x-4">
+          <label class="flex items-center">
+            <input
+              type="radio"
+              formControlName="status"
+              value="active"
+              class="mr-2 text-blue-600 focus:ring-blue-500">
+            <span class="text-sm text-gray-700">Activo</span>
+          </label>
+          <label class="flex items-center">
+            <input
+              type="radio"
+              formControlName="status"
+              value="inactive"
+              class="mr-2 text-blue-600 focus:ring-blue-500">
+            <span class="text-sm text-gray-700">Inactivo</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex justify-end space-x-3 pt-4 border-t border-gray-200">
+        <button
+          type="button"
+          (click)="cancel.emit()"
+          class="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors font-medium">
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          [disabled]="userForm.invalid"
+          class="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg transition-colors font-medium">
+          {{ user() ? 'Guardar Cambios' : 'Crear Usuario' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
